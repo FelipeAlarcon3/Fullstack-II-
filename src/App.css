@@ -1,0 +1,212 @@
+
+
+* {
+  background-color: #f7f7f7;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("/imagenes/Fondo Pagina.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+#first {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+#first h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3em;
+  margin-bottom: 10px;
+  color: #8b4513;
+}
+
+#first p {
+  font-size: 1.2rem;
+  color: #8b4513;
+  margin-bottom: 30px;
+}
+
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  color: #8b4513;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #55bd14;
+  padding: 15px 50px;
+  border: none;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 8px 12px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #8b4513;
+}
+
+nav a:hover {
+  color: #1e06f9;
+}
+
+
+
+#second {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 20px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.producto {
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+  max-width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background-color: #ffffff;
+  margin: auto;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+}
+
+.producto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.producto p {
+  margin: 10px 0;
+}
+
+.producto .price {
+  font-weight: bold;
+  color: #218838;
+  font-size: 1.2rem;
+}
+
+.producto button {
+  background-color: #55bd14;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.producto button:hover {
+  background-color: #4a9e10;
+}
+
+
+#filtro-y-buscador {
+  text-align: center;
+  padding: 20px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input[type="text"] {
+  width: 60%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  padding: 10px 15px;
+  background-color: #55bd14;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #4a9e10;
+}
+
+.filter-options {
+  margin: 20px 0;
+}
+
+.filter-options label {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #8b4513;
+  font-size: 1.1rem;
+}
+
+.filter-options select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: white;
+  color: #8b4513;
+}
+
+
+
+#fourth {
+  background-color: #8bd121;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+#fourth p {
+  color: #3a2b09;
+  font-size: 1.1rem;
+  margin: 10px;
+  text-align: center;
+}
+
+#fourth a {
+  color: #1e06f9;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#fourth a:hover {
+  text-decoration: underline;
+}
