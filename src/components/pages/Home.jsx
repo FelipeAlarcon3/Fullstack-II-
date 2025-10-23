@@ -11,11 +11,6 @@ export default function Home() {
           elegidas a mano, para que disfrutes del sabor más puro y natural.
           ¡Empieza a llenar tu canasta!
         </p>
-        <nav>
-          <a href="iniciar sesion.html">Iniciar Sesión</a>
-          <a href="#" id="cart-button">🛒 Carrito</a>
-          <a href="PerfilUsuario.html">Perfil</a>
-        </nav>
       </section>
 
       <section id="filtro-y-buscador">
@@ -66,7 +61,7 @@ export default function Home() {
 
         <div className="producto">
           <img
-            src="imagenes/zanahorias-zanahorias-organicas-frescas_213438-1450.jpg"
+            src="https://img2.rtve.es/i/?w=1600&i=1653900605179.jpg"
             alt=""
           />
           <p>Zanahorias Orgánicas</p>
@@ -80,7 +75,7 @@ export default function Home() {
         </div>
 
         <div className="producto">
-          <img src="imagenes/Fuji_apple.jpg" alt="" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Rosaceae_Malus_pumila_Malus_pumila_Var_domestica_Apples_Fuji" alt="" />
           <p>Manzana Fuji</p>
           <p className="price">$1200 CLP</p>
           <p>
@@ -93,7 +88,7 @@ export default function Home() {
         </div>
 
         <div className="producto">
-          <img src="imagenes/Starr_070730-7915_Citrus_sinensis.jpg" alt="" />
+          <img src="https://image.tuasaude.com/media/article/uk/dg/beneficios-da-laranja_53623.jpg" alt="" />
           <p>Naranjas Valencia</p>
           <p className="price">$1500 CLP</p>
           <p>
@@ -106,7 +101,7 @@ export default function Home() {
 
         <div className="producto">
           <img
-            src="imagenes/depositphotos_86959796-stock-photo-fresh-honey-with-dipper.jpg"
+            src="https://saborusachile.cl/wp-content/uploads/2024/08/miel-ok-1240x578.jpg"
             alt=""
           />
           <p>Miel Orgánica</p>
@@ -120,7 +115,7 @@ export default function Home() {
         </div>
 
         <div className="producto">
-          <img src="imagenes/recetas-con-espinacas-1.webp" alt="" />
+          <img src="https://i.blogs.es/10d3c5/espinacas-rec/450_1000.jpg" alt="" />
           <p>Espinacas Frescas</p>
           <p className="price">$700 CLP</p>
           <p>
@@ -133,7 +128,7 @@ export default function Home() {
 
         <div className="producto">
           <img
-            src="imagenes/fresh-organic-bunch-cavendish-banana-600nw-2301070675.webp"
+            src="https://vegavirtual.cl/wp-content/uploads/2024/02/CAJA-DE-PLATANO.jpg"
             alt=""
           />
           <p>Plátanos Cavendish</p>
@@ -147,7 +142,7 @@ export default function Home() {
         </div>
 
         <div className="producto">
-          <img src="imagenes/Pimientos tricolores.jpg" alt="" />
+          <img src="https://corp.ametllerorigen.com/wp-content/uploads/2023/11/Blog_pebrot.jpg" alt="" />
           <p>Pimientos Tricolores</p>
           <p className="price">$970 CLP</p>
           <p>
@@ -158,21 +153,17 @@ export default function Home() {
         </div>
 
         <div className="producto">
-          <img src="imagenes/Pepinos.jpg" alt="" />
+          <img src="https://www.imporalaska.com/uploads/products/2022/01/pic_1643299016_1643299058.jpg" alt="" />
           <p>Pepinos Frescos</p>
           <p className="price">$750 CLP</p>
           <p>
-            Descripción: Ofrece pepinos con una piel vibrante de color verde
-            oscuro, sin manchas amarillas ni defectos. Al tacto, deben sentirse
-            firmes y sin zonas blandas. Las puntas deben estar frescas y no
-            resecas, lo cual es un signo de que el producto está en óptimas
-            condiciones.
+            Descripción: Un rico, largo, grueso y jugoso pepino
           </p>
           <button>Agregar al carrito</button>
         </div>
 
         <div className="producto">
-          <img src="imagenes/Lechuga.jpg" alt="" />
+          <img src="https://cloudfront-us-east-1.images.arcpublishing.com/semana/3REV53527RABTL2YCEI3KJZWAM.jpg" alt="" />
           <p>Lechuga</p>
           <p className="price">$500 CLP</p>
           <p>
@@ -184,7 +175,7 @@ export default function Home() {
         </div>
 
         <div className="producto">
-          <img src="imagenes/Papa chilena.jpg" alt="" />
+          <img src="https://d2kkzshb6n9g86.cloudfront.net/wp-content/uploads/2024/05/papas-1-768x529.jpg" alt="" />
           <p>Papas</p>
           <p className="price">$320 CLP</p>
           <p>
@@ -202,7 +193,7 @@ export default function Home() {
         <p>
           Para más información, visita{" "}
           <a
-            href="https://www.instagram.com/leeetyyy1_?igsh=MTFpOGNmYWlqeHhj"
+            href="https://www.instagram.com/miakhalifa/"
             target="_blank"
             rel="noopener noreferrer"
           >
