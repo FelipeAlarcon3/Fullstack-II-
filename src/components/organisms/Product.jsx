@@ -1,3 +1,4 @@
+import React from "react"
 export default function Product(props) {
     const { code, image, name, description, price } = props
     return (

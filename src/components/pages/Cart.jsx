@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Cart.css'; // Importa el CSS
 
 export default function Cart() {
