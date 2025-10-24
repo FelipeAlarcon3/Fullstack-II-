@@ -27,70 +27,70 @@ export default function Home() {
       code: 'ZANAHORIA001',
       name: 'Zanahorias Orgánicas',
       price: '$900 CLP',
-      image: 'imagenes/zanahorias-zanahorias-organicas-frescas_213438-1450.jpg',
+      image: 'https://img2.rtve.es/i/?w=1600&i=1653900605179.jpg',
       description: 'Zanahorias crujientes cultivadas sin pesticidas en la Región de O\'Higgins. Excelente fuente de vitamina A y fibra, ideales para ensaladas, jugos o como snack saludable.'
     },
     {
       code: 'MANZANA001',
       name: 'Manzana Fuji',
       price: '$1200 CLP',
-      image: 'imagenes/Fuji_apple.jpg',
+      image: 'https://viverochillan.cl/wp-content/uploads/2020/06/manzanofuji.jpg',
       description: 'Manzanas Fuji crujientes y dulces, cultivadas en el Valle del Maule. Perfectas para meriendas saludables o como ingrediente en postres. Estas manzanas son conocidas por su textura firme y su sabor equilibrado entre dulce y ácido.'
     },
     {
       code: 'NARANJA001',
       name: 'Naranjas Valencia',
       price: '$1500 CLP',
-      image: 'imagenes/Starr_070730-7915_Citrus_sinensis.jpg',
+      image: 'https://image.tuasaude.com/media/article/uk/dg/beneficios-da-laranja_53623.jpg',
       description: 'Jugosas y ricas en vitamina C, estas naranjas Valencia son ideales para zumos frescos y refrescantes. Cultivadas en condiciones climáticas óptimas que aseguran su dulzura y jugosidad.'
     },
     {
       code: 'MIEL001',
       name: 'Miel Orgánica',
       price: '$5000 CLP',
-      image: 'imagenes/depositphotos_86959796-stock-photo-fresh-honey-with-dipper.jpg',
+      image: 'https://saborusachile.cl/wp-content/uploads/2024/08/miel-ok-1240x578.jpg',
       description: 'Miel pura y orgánica producida por apicultores locales. Rica en antioxidantes y con un sabor inigualable, perfecta para endulzar de manera natural tus comidas y bebidas.'
     },
     {
       code: 'ESPINACA001',
       name: 'Espinacas Frescas',
       price: '$700 CLP',
-      image: 'imagenes/recetas-con-espinacas-1.webp',
+      image: 'https://i.blogs.es/10d3c5/espinacas-rec/450_1000.jpg',
       description: 'Espinacas frescas y nutritivas, perfectas para ensaladas y batidos verdes. Estas espinacas son cultivadas bajo prácticas orgánicas que garantizan su calidad y valor nutricional.'
     },
     {
       code: 'PLATANO001',
       name: 'Plátanos Cavendish',
       price: '$800 CLP',
-      image: 'imagenes/fresh-organic-bunch-cavendish-banana-600nw-2301070675.webp',
+      image: 'https://vegavirtual.cl/wp-content/uploads/2024/02/CAJA-DE-PLATANO.jpg',
       description: 'Plátanos maduros y dulces, perfectos para el desayuno o como snack energético. Estos plátanos son ricos en potasio y vitaminas, ideales para mantener una dieta equilibrada.'
     },
     {
       code: 'PIMIENTO001',
       name: 'Pimientos Tricolores',
       price: '$970 CLP',
-      image: 'imagenes/Pimientos tricolores.jpg',
+      image: 'https://corp.ametllerorigen.com/wp-content/uploads/2023/11/Blog_pebrot.jpg',
       description: 'Perfecto para ensaladas, salteados y como ingrediente en una gran variedad de platos. Excelente para preparar conservas.'
     },
     {
       code: 'PEPINO001',
       name: 'Pepinos Frescos',
       price: '$750 CLP',
-      image: 'imagenes/Pepinos.jpg',
+      image: 'https://www.imporalaska.com/uploads/products/2022/01/pic_1643299016_1643299058.jpg',
       description: 'Ofrece pepinos con una piel vibrante de color verde oscuro, sin manchas amarillas ni defectos. Al tacto, deben sentirse firmes y sin zonas blandas. Las puntas deben estar frescas y no resecas, lo cual es un signo de que el producto está en óptimas condiciones.'
     },
     {
       code: 'LECHUGA001',
       name: 'Lechuga',
       price: '$500 CLP',
-      image: 'imagenes/Lechuga.jpg',
+      image: 'https://cloudfront-us-east-1.images.arcpublishing.com/semana/3REV53527RABTL2YCEI3KJZWAM.jpg',
       description: 'Crujiente, fresca y llena de vida. Cultivada con cuidado y cosechada en su punto óptimo, esta lechuga no es solo un ingrediente, es la base para una comida saludable y deliciosa.'
     },
     {
       code: 'PAPA001',
       name: 'Papas',
       price: '$320 CLP',
-      image: 'imagenes/Papa chilena.jpg',
+      image: 'https://d2kkzshb6n9g86.cloudfront.net/wp-content/uploads/2024/05/papas-1-768x529.jpg',
       description: 'Imagina la textura perfecta para tu puré cremoso, la base ideal para unas papas fritas doradas y crujientes, o la compañera perfecta para asar con tus carnes favoritas. ¡Lista para transformar tu cocina!'
     }
   ];
@@ -98,8 +98,6 @@ export default function Home() {
   
   const handleAddToCart = (producto) => {
     const cart = JSON.parse(localStorage.getItem("products")) || [];
-    
-   
     const exists = cart.find(p => p.code === producto.code);
     
     if (!exists) {
@@ -123,9 +121,7 @@ export default function Home() {
           ¡Empieza a llenar tu canasta!
         </p>
         <nav>
-          <a href="iniciar sesion.html">Iniciar Sesión</a>
           <a href="#" id="cart-button">🛒 Carrito ({cartCount})</a>
-          <a href="PerfilUsuario.html">Perfil</a>
         </nav>
       </section>
 
@@ -159,7 +155,7 @@ export default function Home() {
               Agregar al carrito
             </button>
           </div>
-        ))}
+        ))}        
       </section>
 
       <h1>Contáctanos</h1>
@@ -167,7 +163,7 @@ export default function Home() {
         <p>
           Para más información, visita{" "}
           <a
-            href="https://www.instagram.com/leeetyyy1_?igsh=MTFpOGNmYWlqeHhj"
+            href="https://www.instagram.com/miakhalifa/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -187,6 +183,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-    

@@ -1,0 +1,257 @@
+/* --- ESTILOS DE LOGIN ADAPTADOS DEL TEMA PRINCIPAL --- */
+
+/* Contenedor principal */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/imagenes/Fondo Pagina.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 20px;
+  font-family: "Playfair Display", serif;
+  width: 100%;
+  margin: 0;
+}
+
+/* Caja del formulario */
+.login-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 50px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 500px;
+  border: 2px solid #55bd14;
+  margin: 0 auto;
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #8b4513;
+  font-size: 2.5em;
+  font-family: "Playfair Display", serif;
+}
+
+/* Mensaje de error */
+.login-error {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid #ef5350;
+  font-size: 0.95rem;
+}
+
+/* Formulario */
+.login-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-box form > div {
+  margin-bottom: 20px;
+}
+
+.login-box label {
+  display: block;
+  margin-bottom: 8px;
+  color: #8b4513;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "Playfair Display", serif;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  background-color: rgb(60, 146, 51);
+}
+
+.login-box input:focus {
+  outline: none;
+  border-color: #55bd14;
+  box-shadow: 0 0 5px rgba(85, 189, 20, 0.5);
+}
+
+.login-box input::placeholder {
+  color: #999;
+}
+
+/* Botón de submit */
+.login-box button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background-color: #55bd14;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.login-box button[type="submit"]:hover {
+  background-color: #4a9e10;
+  transform: translateY(-2px);
+}
+
+.login-box button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Texto del footer */
+.login-box > p {
+  text-align: center;
+  margin-top: 25px;
+  color: #8b4513;
+  font-size: 1rem;
+}
+
+.login-box > p a {
+  color: #55bd14;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.login-box > p a:hover {
+  color: #4a9e10;
+  text-decoration: underline;
+}
+
+/* --- RESPONSIVE DESIGN PARA MÓVILES --- */
+
+/* Tablets y dispositivos medianos */
+@media screen and (max-width: 768px) {
+  .login-container {
+    padding: 15px;
+    background-attachment: scroll;
+  }
+
+  .login-box {
+    padding: 35px 25px;
+    max-width: 100%;
+  }
+
+  .login-box h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+  }
+
+  .login-box label {
+    font-size: 0.95rem;
+  }
+
+  .login-box input {
+    padding: 11px 13px;
+    font-size: 0.95rem;
+  }
+
+  .login-box button[type="submit"] {
+    padding: 13px;
+    font-size: 1rem;
+  }
+
+  .login-box > p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Smartphones */
+@media screen and (max-width: 480px) {
+  .login-container {
+    padding: 10px;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+
+  .login-box {
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .login-box h2 {
+    font-size: 1.75em;
+    margin-bottom: 20px;
+  }
+
+  .login-box form > div {
+    margin-bottom: 15px;
+  }
+
+  .login-box label {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+
+  .login-box input {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+  }
+
+  .login-box button[type="submit"] {
+    padding: 12px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+  }
+
+  .login-box > p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+
+  .login-error {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Smartphones muy pequeños */
+@media screen and (max-width: 360px) {
+  .login-container {
+    padding: 8px;
+  }
+
+  .login-box {
+    padding: 20px 15px;
+  }
+
+  .login-box h2 {
+    font-size: 1.5em;
+  }
+
+  .login-box label {
+    font-size: 0.85rem;
+  }
+
+  .login-box input {
+    padding: 9px 10px;
+    font-size: 0.85rem;
+  }
+
+  .login-box button[type="submit"] {
+    padding: 11px;
+    font-size: 0.9rem;
+  }
+
+  .login-box > p {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,138 @@
+
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/imagenes/Fondo Pagina.jpg"); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 20px;
+  font-family: "Playfair Display", serif;
+  width: 100%;
+  margin: 0;
+}
+
+
+.register-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 50px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 500px;
+  border: 2px solid #55bd14; /* Verde principal */
+  margin: 0 auto;
+}
+
+.register-box h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #8b4513; /* Café/Tierra */
+  font-size: 2.5em;
+  font-family: "Playfair Display", serif;
+}
+
+
+.register-error {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid #ef5350;
+  font-size: 0.95rem;
+}
+
+/* Estilo para mensaje de éxito (Agregado para la nueva lógica) */
+.register-success {
+    background-color: #e8f5e9; /* Verde claro */
+    color: #388e3c; /* Verde oscuro */
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #66bb6a;
+    font-size: 0.95rem;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #8b4513; /* Café/Tierra */
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #b52222;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "Playfair Display", serif;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  background-color: rgb(96, 135, 60);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #55bd14; /* Verde principal en foco */
+  box-shadow: 0 0 5px rgba(85, 189, 20, 0.5);
+}
+
+/* Botón de envío */
+.register-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #55bd14; /* Verde principal */
+  color: rgb(0, 0, 0);
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.register-button:hover {
+  background-color: #4a9e10;
+  transform: translateY(-2px);
+}
+
+.register-button:active {
+  transform: translateY(0);
+}
+
+.register-footer {
+  text-align: center;
+  margin-top: 25px;
+  color: #8b4513;
+  font-size: 1rem;
+}
+
+.register-footer a {
+  color: #55bd14; /* Enlaces en verde */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.register-footer a:hover {
+  color: #4a9e10;
+  text-decoration: underline;
+}
