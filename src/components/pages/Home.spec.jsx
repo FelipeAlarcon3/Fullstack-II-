@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react"
-import Product from "../organisms/Product"
+import Product from "../organisms/Product"  
 import React from "react"
 
 beforeEach(() => {
@@ -9,24 +9,18 @@ beforeEach(() => {
 
 describe("Product component", () => {
   const mockProduct = {
-    code: "LECHE001",
-    name: "Leche Entera",
-    price: "$1590 CLP",
-    image:
-      "https://thumbs.dreamstime.com/b/leche-de-granja-en-diferentes-platos-la-mesa-madera-naturaleza-desenfocada-el-fondo-167953475.jpg",
-    description:
-      "Directa del campo a tu mesa, nuestra leche es pura y natural. Con una textura cremosa y un sabor inigualable, cada vaso te da la energía y los nutrientes que necesitas para empezar bien el día",
+    code: "1",
+    image: "http://example.com/image1.png",
+    description: "Oso Patriarcal",
+    name: "Oso machista opresor",
+    price: "15990",
   }
 
   it("se renderiza correctamente", () => {
     render(<Product {...mockProduct} />)
-    expect(
-      screen.getByText(
-        "Directa del campo a tu mesa, nuestra leche es pura y natural. Con una textura cremosa y un sabor inigualable, cada vaso te da la energía y los nutrientes que necesitas para empezar bien el día"
-      )
-    ).toBeInTheDocument()
-    expect(screen.getByText("Leche Entera")).toBeInTheDocument()
-    expect(screen.getByText("$1590 CLP")).toBeInTheDocument()
+    expect(screen.getByText("Oso Patriarcal")).toBeInTheDocument()
+    expect(screen.getByText("Oso machista opresor")).toBeInTheDocument()
+    expect(screen.getByText("15990")).toBeInTheDocument()
   })
 
   it("llama correctamente al localStorage", () => {

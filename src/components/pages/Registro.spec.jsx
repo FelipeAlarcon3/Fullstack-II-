@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react"
-import Product from "../organisms/Product"
+import Product from "../organisms/Product" 
 import React from "react"
 
 beforeEach(() => {

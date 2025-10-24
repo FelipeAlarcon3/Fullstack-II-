@@ -1,108 +1,95 @@
-import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import './Registro.css';
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import Register from "../../pages/Registro"; 
+import { BrowserRouter as Router } from "react-router-dom"; 
+import React from "react";
 
-export default function Register() {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirm, setConfirm] = useState("");
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
-  const navigate = useNavigate();
 
-  const handleRegister = (e) => {
-    e.preventDefault();
-    setError("");
-    setSuccess("");
+beforeEach(() => {
+  Storage.prototype.getItem = jest.fn(() => JSON.stringify([])); 
+  Storage.prototype.setItem = jest.fn();
+});
 
-    // Validaciones básicas
-    if (!username || !email || !password || !confirm) {
-      setError("Por favor completa todos los campos");
-      return;
-    }
 
-    if (password !== confirm) {
-      setError("Las contraseñas no coinciden");
-      return;
-    }
+describe("Register component", () => {
 
-    // Obtener usuarios guardados
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+  it("muestra un error si los campos no están completos", async () => {
+    render(
+      <Router>
+        <Register />
+      </Router>
+    );
 
-    // Verificar si el email ya existe
-    const userExists = users.find((user) => user.email === email);
-    if (userExists) {
-      setError("Este correo ya está registrado");
-      return;
-    }
-
-    // Guardar nuevo usuario
-    const newUser = { username, email, password };
-    users.push(newUser);
-    localStorage.setItem("users", JSON.stringify(users));
-
-    setSuccess("¡Registro exitoso! Redirigiendo...");
+ 
+    const submitButton = screen.getByText("Registrarse");
     
-    setTimeout(() => {
-      navigate("/login");
-    }, 2000);
-  };
+    
+    fireEvent.click(submitButton);
 
-  return (
-    <div className="register-container">
-      <div className="register-box">
-        <h2>Registro</h2>
 
-        {error && <p className="register-error">{error}</p>}
-        {success && <p className="register-success">{success}</p>}
+    expect(await screen.findByText("Por favor completa todos los campos")).toBeInTheDocument();
+  });
 
-        <form onSubmit={handleRegister} className="register-form">
-          <div className="form-group">
-            <label>Nombre de usuario:</label>
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </div>
+  it("muestra un error si las contraseñas no coinciden", async () => {
+    render(
+      <Router>
+        <Register />
+      </Router>
+    );
 
-          <div className="form-group">
-            <label>Email:</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
+    fireEvent.change(screen.getByLabelText("Nombre de usuario"), { target: { value: "usuario" } });
+    fireEvent.change(screen.getByLabelText("Email"), { target: { value: "usuario@mail.com" } });
+    fireEvent.change(screen.getByLabelText("Contraseña"), { target: { value: "contraseña123" } });
+    fireEvent.change(screen.getByLabelText("Confirmar contraseña"), { target: { value: "contraseña456" } });
 
-          <div className="form-group">
-            <label>Contraseña:</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+    fireEvent.click(screen.getByText("Registrarse"));
 
-          <div className="form-group">
-            <label>Confirmar contraseña:</label>
-            <input
-              type="password"
-              value={confirm}
-              onChange={(e) => setConfirm(e.target.value)}
-            />
-          </div>
 
-          <button type="submit" className="register-button">
-            Registrarse
-          </button>
-        </form>
+    expect(await screen.findByText("Las contraseñas no coinciden")).toBeInTheDocument();
+  });
 
-        <p className="register-footer">
-          ¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link>
-        </p>
-      </div>
-    </div>
-  );
-}
+  it("muestra un error si el email ya está registrado", async () => {
+
+    Storage.prototype.getItem = jest.fn(() => JSON.stringify([{ email: "usuario@mail.com", username: "usuario", password: "contraseña123" }]));
+
+    render(
+      <Router>
+        <Register />
+      </Router>
+    );
+
+  
+    fireEvent.change(screen.getByLabelText("Nombre de usuario"), { target: { value: "usuario2" } });
+    fireEvent.change(screen.getByLabelText("Email"), { target: { value: "usuario@mail.com" } });
+    fireEvent.change(screen.getByLabelText("Contraseña"), { target: { value: "contraseña123" } });
+    fireEvent.change(screen.getByLabelText("Confirmar contraseña"), { target: { value: "contraseña123" } });
+
+
+    fireEvent.click(screen.getByText("Registrarse"));
+
+    expect(await screen.findByText("Este correo ya está registrado")).toBeInTheDocument();
+  });
+
+  it("registra correctamente un nuevo usuario y redirige", async () => {
+    render(
+      <Router>
+        <Register />
+      </Router>
+    );
+
+    fireEvent.change(screen.getByLabelText("Nombre de usuario"), { target: { value: "usuario" } });
+    fireEvent.change(screen.getByLabelText("Email"), { target: { value: "usuario@mail.com" } });
+    fireEvent.change(screen.getByLabelText("Contraseña"), { target: { value: "contraseña123" } });
+    fireEvent.change(screen.getByLabelText("Confirmar contraseña"), { target: { value: "contraseña123" } });
+
+    fireEvent.click(screen.getByText("Registrarse"));
+
+    await waitFor(() => expect(screen.getByText("¡Registro exitoso! Redirigiendo...")).toBeInTheDocument());
+
+    expect(localStorage.setItem).toHaveBeenCalledWith(
+      "users",
+      JSON.stringify([{ username: "usuario", email: "usuario@mail.com", password: "contraseña123" }])
+    );
+
+    await waitFor(() => expect(window.location.pathname).toBe("/login"));
+  });
+});

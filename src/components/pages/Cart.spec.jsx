@@ -1,9 +1,9 @@
 import { fireEvent, render, screen } from "@testing-library/react"
-import Product from "../organisms/Product"  // 👈 Corrige la ruta
+import Product from "../organisms/Product"  
 import React from "react"
 
 beforeEach(() => {
-  // Mock del localStorage
+
   Storage.prototype.getItem = jest.fn(() => JSON.stringify([]))
   Storage.prototype.setItem = jest.fn()
 })
@@ -26,7 +26,7 @@ describe("Product component", () => {
 
   it("llama correctamente al localStorage", () => {
     render(<Product {...mockProduct} />)
-    const button = screen.getByText("Añadir al carro") // asegúrate que coincida con tu texto real
+    const button = screen.getByText("Añadir al carro")
     fireEvent.click(button)
     expect(localStorage.setItem).toHaveBeenCalledWith(
       "products",
